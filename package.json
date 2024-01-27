@@ -1,0 +1,23 @@
+{
+  "name": "eternasort",
+  "version": "1.0.0",
+  "description": "An app for sorting cards and creating template decks for the game Yugioh Eternal Duelist Soul",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ezmr7/EternaSort.git"
+  },
+  "author": "Ezekiel Mohr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ezmr7/EternaSort/issues"
+  },
+  "homepage": "https://github.com/Ezmr7/EternaSort#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "react": "^18.2.0"
+  }
+}
