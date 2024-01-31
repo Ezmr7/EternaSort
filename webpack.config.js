@@ -6,7 +6,7 @@ const __dirname = path.dirname(__filename);
 
 const webpack = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle[contenthash].js',
@@ -17,6 +17,9 @@ const webpack = {
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'dist'),
+    },
+    proxy: {
+      '/': 'http://localhost:3000',
     },
     port: 8080,
     hot: true,
@@ -30,8 +33,16 @@ const webpack = {
       {
         test: /\.(png|jpg|jpeg|svg|gif)$/i,
         type: 'asset/resource'
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: ['ts-loader'],
+        include: [path.resolve(__dirname, 'src')]
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   plugins: [
     new HtmlWebpackPlugin({
